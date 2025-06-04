@@ -12,5 +12,11 @@ export default defineConfig({
             'Access-Control-Allow-Origin': '*'
         },
     },
-    integrations: [react()]
+    integrations: [react()],
+    // Skip version checks to allow building with the current Node.js version
+    vite: {
+        ssr: {
+            noExternal: ['react', 'react-dom']
+        }
+    }
 })
